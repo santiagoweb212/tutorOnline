@@ -6,7 +6,16 @@ export default {
 
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        yellow: "#E6DB20",
+        yellowBlack: "#dbce18",
+        customDarkGray: "#363237",
+      },
+      fontFamily: {
+        poppins: "Poppins",
+      },
+    },
   },
   plugins: [],
 }
