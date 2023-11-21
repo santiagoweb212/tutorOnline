@@ -3,13 +3,15 @@ import React from "react";
 import lupa from "@/assets/lupa.svg";
 const SearchBar = () => {
   return (
-    <div className="relative w-64">
+    <div className="relative w-64 h-full">
       <input
         type="text"
-        placeholder="Buscar..."
+        placeholder="Que Deseas Aprender Hoy?"
         className="outline-none focus:outline-none px-2 w-full h-full rounded-[0.4rem]"
       />
-      <button className="absolute  top-1/2 right-1 transform -translate-y-1/2 cursor-pointer"><img className="h-4 w-4" src={lupa} alt="" /></button>
+      <button className="absolute  top-1/2 right-1 transform -translate-y-1/2 cursor-pointer">
+        <img className="h-4 w-4" src={lupa} alt="" />
+      </button>
     </div>
   );
 };
