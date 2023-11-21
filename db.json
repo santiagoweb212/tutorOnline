@@ -25,5 +25,15 @@
       "nombre": "Programación en Java"
     }
    
+  ],
+  "usuario":[
+    {
+      "id":1,
+      "nombre": "Fredy Cndor"
+    },
+    {
+      "id":2,
+      "nombre": "juan"
+    }
   ]
 }
