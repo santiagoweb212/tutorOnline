@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         yellow: "#E6DB20",
+        yellowBlack: "#dbce18",
         customDarkGray: "#363237",
       },
       fontFamily: {
