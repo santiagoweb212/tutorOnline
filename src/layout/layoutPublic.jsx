@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 const LayoutPublic = () => {
     return (
         <><NavBar/>
-            <main>main<Outlet /></main>
+            <main><Outlet /></main>
             <footer>footer</footer>
         </>
 
