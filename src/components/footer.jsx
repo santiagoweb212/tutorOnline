@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-white text-center  pt-5">
-        © 2023 Tutotr<span className="text-yellow">Online</span>. Todos los
+        © 2023 Tutor<span className="text-yellow">Online</span>. Todos los
         derechos reservados
       </p>
     </section>
