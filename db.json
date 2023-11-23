@@ -24,6 +24,23 @@
       "id": 6,
       "nombre": "Programación en Java"
     }
-   
+  ],
+  "slides": [
+    {
+      "id": 1,
+      "url": "./src/assets/slides/altumcode-dMUt0X3f59Q-unsplash.jpg"
+    },
+    {
+      "id": 2,
+      "url": "./src/assets/slides/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg"
+    },
+    {
+      "id": 3,
+      "url": "./src/assets/slides/ryland-dean-6k6N8HTrXyE-unsplash (1).jpg"
+    },
+    {
+      "id": 4,
+      "url": "./src/assets/slides/ryland-dean-6k6N8HTrXyE-unsplash.jpg"
+    }
   ]
 }
