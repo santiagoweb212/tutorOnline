@@ -42,5 +42,91 @@
       "id": 4,
       "url": "./src/assets/slides/ryland-dean-6k6N8HTrXyE-unsplash.jpg"
     }
+  ],
+  "cursos-populares": [
+    {
+      "nombre": "Desarrollo Web Completo",
+      "tutor": "John Doe",
+      "puntuacion": 4.7,
+      "precio_oferta": 29.99,
+      "precio_normal": 99.99,
+      "picture": "./src/assets/slides/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg"
+    },
+    {
+      "nombre": "Python para Principiantes",
+      "tutor": "Jane Smith",
+      "puntuacion": 4.5,
+      "precio_oferta": 19.99,
+      "precio_normal": 49.99,
+      "picture": "./src/assets/slides/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg"
+    },
+    {
+      "nombre": "Curso Avanzado de JavaScript",
+      "tutor": "Carlos García",
+      "puntuacion": 4.8,
+      "precio_oferta": 39.99,
+      "precio_normal": 79.99,
+      "picture": "./src/assets/slides/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg"
+    },
+    {
+      "nombre": "Aprende React en 7 Días",
+      "tutor": "Maria Rodriguez",
+      "puntuacion": 4.6,
+      "precio_oferta": 24.99,
+      "precio_normal": 59.99,
+      "picture": "./src/assets/slides/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg"
+    }
+  ],
+  "coments": [
+    {
+      "nombre": "Estudiante123",
+      "foto": "https://randomuser.me/api/portraits/women/12.jpg",
+      "opinion": "¡Tutor Online es increíble! Me ha ayudado mucho con mis deberes de matemáticas."
+    },
+    {
+      "nombre": "AprendizX",
+      "foto": "https://randomuser.me/api/portraits/men/3.jpg",
+      "opinion": "La variedad de cursos disponibles es asombrosa. ¡Realmente estoy disfrutando aprendiendo aquí!"
+    },
+    {
+      "nombre": "Usuario_Tutor",
+      "foto": "https://randomuser.me/api/portraits/men/97.jpg",
+      "opinion": "Como tutor, encuentro que la plataforma facilita la interacción con los estudiantes y el intercambio de conocimientos."
+    },
+    {
+      "nombre": "EstudianteCurioso",
+      "foto": "https://randomuser.me/api/portraits/men/7.jpg",
+      "opinion": "¡El diseño intuitivo del sitio hace que sea fácil encontrar lo que necesito. Gracias Tutor Online!"
+    },
+    {
+      "nombre": "FuturoExperto",
+      "foto": "https://randomuser.me/api/portraits/women/12.jpg",
+      "opinion": "He mejorado mis habilidades en programación gracias a los excelentes recursos proporcionados por Tutor Online."
+    },
+    {
+      "nombre": "CientificaEnFormacion",
+      "foto": "https://randomuser.me/api/portraits/men/73.jpg",
+      "opinion": "Los materiales científicos son muy informativos. Me siento más preparada para mis estudios en biología."
+    },
+    {
+      "nombre": "HistoriadorDelFuturo",
+      "foto": "https://randomuser.me/api/portraits/women/48.jpg",
+      "opinion": "Los cursos de historia me han brindado una perspectiva más amplia. ¡Estoy emocionado por lo que aprenderé a continuación!"
+    },
+    {
+      "nombre": "EstrellaEnCrecimiento",
+      "foto": "https://randomuser.me/api/portraits/women/55.jpg",
+      "opinion": "Los profesores son apasionados y responden rápidamente a mis preguntas. Esto ha hecho que mi experiencia sea aún mejor."
+    },
+    {
+      "nombre": "EternoAprendiz",
+      "foto": "https://randomuser.me/api/portraits/men/62.jpg",
+      "opinion": "La plataforma Tutor Online ha hecho que el aprendizaje sea accesible y divertido. ¡Nunca dejo de aprender cosas nuevas!"
+    },
+    {
+      "nombre": "PadreOrgulloso",
+      "foto": "https://randomuser.me/api/portraits/women/37.jpg",
+      "opinion": "Mi hijo ha estado utilizando Tutor Online para mejorar en sus estudios. Estamos muy contentos con los resultados."
+    }
   ]
 }
