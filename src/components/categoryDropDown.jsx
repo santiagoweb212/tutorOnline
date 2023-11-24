@@ -18,7 +18,16 @@ const CategoryDropDown = () => {
     fetchCategorias();
   };
   return (
-    <span>categorias</span>
+    <div className="relative cursor-pointer" onMouseEnter={handleOpenDropDown} onMouseLeave={handleCloseDropDown}>
+      <span className="text-white font-medium hover:text-yellow" >categorias</span>
+      {openDropDown && (
+        <ul className="absolute bg-white w-48 p-1 rounded-lg z-20">
+          {categories.map((category) => (
+            <li key={category.id} className="text-customDarkGray hover:bg-slate-100 text-ellipsis overflow-hidden whitespace-nowrap">{category.nombre}</li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 };
 
