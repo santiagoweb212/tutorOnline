@@ -1,7 +1,9 @@
 import BotonTutor from "../../components/botonTutor";
+
 function RegistroUsuario(){
+
   return (
-    <div className="max-w-md mx-auto mt-8 bg-customDarkGray p-8 rounded-lg shadow-md font-poppins">
+    <div className="max-w-md mx-auto mt-4 bg-customDarkGray p-8 rounded-lg shadow-md font-poppins">
       <h2 className="text-2xl text-white font-bold text-center mb-1 tracking-wider">Registrate</h2>
       <p className="text-justify text-yellow mb-3">Acceda a nuestro contenido y conviertete en un experto</p>
       <form>
