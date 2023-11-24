@@ -14,7 +14,7 @@ const Footer = () => {
     <section className="w-full  bg-customDarkGray flex  flex-col px-6 py-4 ">
       <div className="flex text-white gap-24 justify-around ">
         <div className=" ">
-          <h3 className="text-white font-bold text-xl pb-2">Sobre Nosotros</h3>
+          <h3 className="text-white font-bold text-xl pb-2"><NavLink to={"/nosotros"}>Sobre Nosotros</NavLink></h3>
           <p className="w-56 ">
             Somos una plataforma de aprendizaje que ofrece cursos en línea de
             alta calidad.Nuestra misión es ayudar a las personas a aprender y
