@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import LayoutPublic from "@/layout/layoutPublic";
 import RegistroUsuario from "@/pages/registerUser/registerUser";
 import Home from "@/pages/Home/home";
-import { Nosotros } from '@/pages/Nosotros'
+import { Nosotros } from '@/pages/Nosotros/Nosotros'
 const router = createBrowserRouter([{
     path: '/', element: <LayoutPublic />, children: [
         { index: true, element: <Home/> },

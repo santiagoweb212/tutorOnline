@@ -1,8 +1,8 @@
 // Nosotros.jsx
 import React from 'react';
-import { Header } from '../componentes/header';
-import { Section } from '../componentes/section';
-import { data } from '../componentes/data';
+import { Header } from './components/header';
+import { Section } from './components/section';
+import { data } from './components/data';
 
 export const Nosotros = () => {
   return (
