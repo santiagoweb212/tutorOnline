@@ -128,5 +128,19 @@
       "foto": "https://randomuser.me/api/portraits/women/37.jpg",
       "opinion": "Mi hijo ha estado utilizando Tutor Online para mejorar en sus estudios. Estamos muy contentos con los resultados."
     }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "username": "fredy",
+      "email":"fredy@hotmail.com",
+      "password":"123456"
+    },
+    {
+      "id": 2,
+      "username": "juan",
+      "email":"juan@hotmail.com",
+      "password":"123456"
+    }    
   ]
 }
