@@ -1,13 +1,12 @@
 import React from 'react'
+import { Formulario } from './formulario'
 
 export const Main = () => {
   return (
 
     <>
-        <main>
-            <section>
-                <h1>D</h1>
-            </section>
+        <main className=''>
+            <Formulario />
         </main>
     </>
   )
