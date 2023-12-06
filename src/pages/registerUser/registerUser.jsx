@@ -1,65 +1,64 @@
-import { useEffect, useState } from "react";
 import BotonTutor from "../../components/botonTutor";
-import {useForm} from 'react-hook-form';
+import { useState } from "react";
 
 function RegistroUsuario(){
-  const {register, handleSubmit, formState:{errors} } = useForm();
-  const [usersData, setUsersData] = useState([]);
+  const [values, setValues] = useState({
+    username: '',
+    email: '',
+    password: ''
+  });
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch('http://localhost:3001/user');
-      const data = await response.json();
-      setUsersData(data);
-    } catch (error) {
-      console.error('Error al cargar datos:', error);
+  const [errors, setErrors] = useState({
+    username: '',
+    email: '',
+    password: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    switch (name) {
+      case 'username':
+        setErrors({ ...errors, username: value.trim() === '' ? 'El campo es requerido' : (value.length < 3 ? 'El nombre es demasiado corto' : '') });
+        break;
+      case 'email':
+        // eslint-disable-next-line no-case-declarations
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        setErrors({ ...errors, email: !emailRegex.test(value) ? 'Correo inválido' : '' });
+        break;
+      case 'password':
+        setErrors({ ...errors, password: value.length < 6 ? 'La contraseña es demasiado corta' : '' });
+        break;
+      default:
+        break;
     }
+
+    setValues({ ...values, [name]: value });
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-  
-
-  const onSubmit = (data) => {
-    // Verificar si el usuario o correo ya existen en los datos cargados
-    const userExists = usersData.some(
-      (user) => user.username === data.username || user.email === data.email
-    );
-
-    if (userExists) {
-      console.log('El usuario o correo ya existe');
-      alert("El usuario o correo ya existe");
-      // Aquí podrías mostrar un mensaje de error al usuario
-    } else {      
-      console.log('Datos enviados:', data);
-      alert("Datos enviados correctamente");
-      // Aquí podrías proceder con el registro del usuario
-    }
-  };
-
+  /* const onSubmit = (data) => {
+    // Procesar los datos aquí después de la validación exitosa
+    console.log(data);
+  } */
   return (
     <div className="max-w-md mx-auto mt-4 mb-4 bg-customDarkGray p-8 rounded-lg shadow-md font-poppins">
       <h2 className="text-2xl text-white font-bold text-center mb-1 tracking-wider">Registrate</h2>
       <p className="text-justify text-yellow mb-3">Acceda a nuestro contenido y conviertete en un experto</p>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      
+      <form /* onSubmit={handleSubmit(onSubmit)} */ className="space-y-4">
         <div className="mb-4">
           <label htmlFor="username" className="block text-white">
             Nombre completo:
           </label>
-          <input
-            id="username"
+          <input            
             type="text"
-            {...register('username', {
-              required: 'Este campo es requerido',
-              minLength: { value: 4, message: 'El nombre de usuario es demasiado corto' },
-              maxLength: { value: 30, message: 'El nombre de usuario es demasiado largo' },
-            })}            
+            name="username"
+            value={values.username} 
+            onChange={handleChange}            
             placeholder="Ingrese su nombre completo"            
             className="w-full border-gray-300 rounded-md mt-1 px-3 py-2"
           />
           {errors.username && (
-            <div className="text-red-500">{errors.username.message}</div>
+            <div className="text-red-500">{errors.username}</div>
           )}
         </div>   
 
@@ -67,21 +66,16 @@ function RegistroUsuario(){
           <label htmlFor="email" className="block text-white">
             Correo electronico:
           </label>
-          <input
-            id="email"
-            type="email"       
-            {...register('email', {
-              required: 'Este campo es requerido',
-              pattern: {
-                value: /^\S+@\S+$/i,
-                message: 'Correo electrónico inválido',
-              },
-            })}
+          <input            
+            type="email" 
+            name="email"      
+            value={values.email} 
+            onChange={handleChange}
             placeholder="Ingrese su correo"           
             className="w-full border-gray-300 rounded-md mt-1 px-3 py-2"
           />
           {errors.email && (
-            <div className="text-red-500">{errors.email.message}</div>
+            <div className="text-red-500">{errors.email}</div>
           )}
         </div>
 
@@ -89,18 +83,16 @@ function RegistroUsuario(){
           <label htmlFor="password" className="block text-white">
             Contraseña:
           </label>
-          <input
-            id="password"
-            type="password"    
-            {...register('password', {
-              required: 'Este campo es requerido',
-              minLength: { value: 6, message: 'La contraseña debe tener al menos 6 caracteres' },
-            })}
+          <input            
+            type="password"
+            name="password"    
+            value={values.password} 
+            onChange={handleChange}
             placeholder="Ingrese su contraseña"           
             className="w-full border-gray-300 rounded-md mt-1 px-3 py-2"
           />
           {errors.password && (
-            <div className="text-red-500">{errors.password.message}</div>
+            <div className="text-red-500">{errors.password}</div>
           )}
         </div>
 
