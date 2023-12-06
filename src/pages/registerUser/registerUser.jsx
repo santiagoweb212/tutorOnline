@@ -19,6 +19,7 @@ function RegistroUsuario(){
 
     switch (name) {
       case 'username':
+        /* const nameRegex = /^[a-zA]$/; */
         setErrors({ ...errors, username: value.trim() === '' ? 'El campo es requerido' : (value.length < 3 ? 'El nombre es demasiado corto' : '') });
         break;
       case 'email':
