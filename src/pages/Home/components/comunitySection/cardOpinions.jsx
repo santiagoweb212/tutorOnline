@@ -1,30 +1,22 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "./card";
-
+import { useQuery } from "react-query";
+const fetchOpinions = async () => {
+  const data = await axios.get("http://localhost:3001/coments");
+  return data.data;
+};
 const CardOpinions = () => {
-  const [opinions, setOpinions] = useState([]);
-  const fetchOpinions = async () => {
-    const data = await axios.get("http://localhost:3001/coments");
-    return data.data;
-  };
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetchOpinions();
-        setOpinions(response);
-      } catch (error) {
-        console.error("Error setting opinions:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+  const { data, isLoading } = useQuery({
+    queryKey: ["opinions"],
+    queryFn: fetchOpinions,
+    refetchOnMount: false,
+  });
+ 
   return (
-    <section className=" flex  gap-8 justify-center mt-10 ">
-      {opinions &&
-        opinions.slice(0, 3).map((opinion) => {
+    <section className=" flex flex-col md:flex-row gap-12 justify-center mt-10 ">
+      {data &&
+        data.slice(0, 3).map((opinion) => {
           return (
             <Card
               key={opinion.id}

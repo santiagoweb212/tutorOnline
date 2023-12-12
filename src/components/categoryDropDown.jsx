@@ -1,15 +1,12 @@
+import axios from "axios";
 import React, { useState } from "react";
-
+import { useQuery } from "react-query";
+const fetchCategorias =async() => {
+  const response = await axios.get("http://localhost:3001/categorias")
+  return response.data
+};
 const CategoryDropDown = () => {
-  const [openDropDown, setOpenDropDown] = useState(false);
-  const [categories, setCategories] = useState([]);
-
-  const fetchCategorias = () => {
-    fetch("http://localhost:3001/categorias")
-      .then((response) => response.json())
-      .then((data) => setCategories(data))
-      .catch((error) => console.error("Error:", error));
-  };
+  const {data}=useQuery({queryKey:["categorias"],queryFn:fetchCategorias})
   const handleCloseDropDown = () => {
     setOpenDropDown(false);
   };
@@ -18,17 +15,37 @@ const CategoryDropDown = () => {
     fetchCategorias();
   };
   return (
-    <div className="relative cursor-pointer" onMouseEnter={handleOpenDropDown} onMouseLeave={handleCloseDropDown}>
-      <span className="text-white font-medium hover:text-yellow" >categorias</span>
-      {openDropDown && (
-        <ul className="absolute bg-white w-48 p-1 rounded-lg z-20">
-          {categories.map((category) => (
-            <li key={category.id} className="text-customDarkGray hover:bg-slate-100 text-ellipsis overflow-hidden whitespace-nowrap">{category.nombre}</li>
+    <div className="relative " onMouseEnter={handleOpenDropDown} onMouseLeave={handleCloseDropDown}>
+      <span className="md:text-white font-medium  md:hover:text-yellow" >categorias</span>
+    
+       <ul className="md:absolute  bg-white w-48 p-1 rounded-lg z-20 pointer-events-auto">
+          {data && data.map((category) => (
+            <li key={category.id} className="text-customDarkGray px-2 md:px-0 hover:bg-slate-100 text-ellipsis overflow-hidden whitespace-nowrap">{category.nombre}</li>
           ))}
         </ul>
-      )}
     </div>
   );
 };
 
 export default CategoryDropDown;
+
+ {/*  {openDropDown && (
+        <ul className="  md:absolute bg-white w-48 p-1 rounded-lg z-20">
+          {categories.map((category) => (
+            <li key={category.id} className="text-customDarkGray px-2 md:px-0 hover:bg-slate-100 text-ellipsis overflow-hidden whitespace-nowrap">{category.nombre}</li>
+          ))}
+        </ul>
+      )} */}
+      
+
+      /*  const [openDropDown, setOpenDropDown] = useState(false);
+  
+
+  
+  const handleCloseDropDown = () => {
+    setOpenDropDown(false);
+  };
+  const handleOpenDropDown = () => {
+    setOpenDropDown(true);
+    fetchCategorias();
+  }; */
