@@ -45,7 +45,7 @@ const NavBar = () => {
           crear cuenta
         </NavLink>
         <NavLink
-          to={"/iniciar-session"}
+          to={"/login"}
           className="h-full text-white  font-medium flex items-center justify-center"
         >
           iniciar session
