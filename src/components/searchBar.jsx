@@ -3,7 +3,7 @@ import React from "react";
 import lupa from "@/assets/lupa.svg";
 const SearchBar = () => {
   return (
-    <div className="relative w-42 md:w-64   h-8">
+    <div className="relative w-42 md:w-50   h-8">
       <input
         type="text"
         placeholder="Que Deseas Aprender Hoy?"

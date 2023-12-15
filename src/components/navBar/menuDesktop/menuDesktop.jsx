@@ -37,8 +37,8 @@ const MenuDesktop = () => {
         )}
         {!isAuthUser && (
           <>
-            <NavLink className={" font-medium bg-white rounded-xl py-1 px-3"}>crear cuenta</NavLink>
-            <NavLink className={"text-white font-medium hover:bg-blue-600 hover:rounded-xl py-1 px-3"}>
+            <NavLink className={" font-medium bg-white rounded-xl py-1 px-2 text-sm"}>crear cuenta</NavLink>
+            <NavLink className={"text-white font-medium hover:bg-blue-600 hover:rounded-xl py-1 px-2 text-sm"}>
               iniciar sesion
             </NavLink>
           </>
