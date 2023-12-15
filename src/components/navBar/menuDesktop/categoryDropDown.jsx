@@ -18,7 +18,7 @@ const CategoryDropDown = () => {
     fetchCategorias();
   };
   return (
-    <div className="relative cursor-pointer border border-blue-500" onMouseEnter={handleOpenDropDown} onMouseLeave={handleCloseDropDown}>
+    <div className="relative cursor-pointer" onMouseEnter={handleOpenDropDown} onMouseLeave={handleCloseDropDown}>
       <span className="text-white text-sm hover:text-yellow" >categorias</span>
       {openDropDown && (
         <ul className="absolute bg-white w-48 p-1 rounded-lg z-20">
