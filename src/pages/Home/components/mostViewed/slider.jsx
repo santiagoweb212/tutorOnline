@@ -10,12 +10,15 @@ import "swiper/css/pagination";
 // import required modules
 import { Grid, Pagination, Autoplay, Navigation } from "swiper/modules";
 import StartRating from "@/components/startViewRating/startRating";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 export default function SliderMostViewed({ slides }) {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
   return (
+    
     <>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={isDesktop ? 3 : 1}
         loop={true}
         grid={{
           rows: 1,
@@ -32,8 +35,8 @@ export default function SliderMostViewed({ slides }) {
         {slides &&
           slides.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div>
-                <img src={slide.picture} alt="" className="h-full object-cover rounded-t-lg" />
+              <div className="">
+                <img src={slide.picture} alt="" className=" object-cover rounded-t-lg" />
                 <h2 className="font-bold text-lg">{slide.nombre}</h2>
                 <span className="text-slate-500 font-medium">{slide.tutor}</span>
                 <StartRating rating={4.5}/>
