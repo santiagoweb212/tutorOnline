@@ -133,14 +133,20 @@
     {
       "id": 1,
       "username": "fredy",
-      "email":"fredy@hotmail.com",
-      "password":"123456"
+      "email": "fredy@hotmail.com",
+      "password": "123456"
     },
     {
       "id": 2,
       "username": "juan",
-      "email":"juan@hotmail.com",
-      "password":"123456"
-    }    
+      "email": "juan@hotmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 1702664601347,
+      "username": "juan santiago",
+      "email": "carlos@gmail.com",
+      "password": "123abcd##"
+    }
   ]
 }
