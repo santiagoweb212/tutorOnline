@@ -1,50 +1,54 @@
 import Slider from "@/components/slider/slider";
-import React, { Suspense, useEffect, useState } from "react";
 import Welcome from "./components/welcome";
 import MostViewedSection from "./components/mostViewed/mostViewedSection";
-import axios from "axios";
 import SliderMostViewed from "./components/mostViewed/slider";
 import ComunityOpinions from "./components/comunitySection/comunityOpinions";
+import { useQueries } from "react-query";
+import useCategoriesStore from "@/store/useCategorieStore";
+import { QUERYKEYS } from "@/constants/stringKeys";
+import { fetchCategories, fetchSlide, fetchSlideMostViewed } from "@/api/api";
 
 const Home = () => {
-  const [slides, setSlides] = useState([]);
-  const [slideMostViewed, setSlideMostViewed] = useState([]);
-  const fetchSlideMostViewed = async () => {
-    const data = await axios.get("http://localhost:3001/cursos-populares");
-    return data.data;
-  };
-  const fetchSlide = async () => {
-    const data = await axios.get("http://localhost:3001/slides");
-    return data.data;
-  };
-  useEffect(() => {
-    const fecthData = async () => {
-      const [slides, slideMostViewed] = await Promise.all([
-        fetchSlide(),
-        fetchSlideMostViewed(),
-      ]);
-      setSlides(slides);
-      setSlideMostViewed(slideMostViewed);
-    };
-    fecthData();
-  
-  }, []);
+  const setCategories = useCategoriesStore((state) => state.setCategories);
+  const [slideImg, popularCourse] = useQueries([
+    {
+      queryKey: [QUERYKEYS.SLIDEIMG],
+      queryFn: fetchSlide,
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+    },
+    {
+      queryKey: [QUERYKEYS.POPULARCOURSE],
+      queryFn: fetchSlideMostViewed,
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+    },
+    {
+      queryKey: [QUERYKEYS.CATEGORIES],
+      queryFn: fetchCategories,
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+      onSuccess: (data) => {
+        if (data) setCategories(data);
+      },
+    },
+  ]);
+
   return (
     <>
       <section className=" w-full h-80">
-        <Slider slides={slides} />
+        <Slider slides={slideImg.data} />
       </section>
-      <Welcome
-        text={
-          "Únete a la comunidad de aprendizaje online y en vivo más grande de habla hispana"
-        }
-      />
-      <MostViewedSection  >
-        <SliderMostViewed slides={slideMostViewed}/>
+      <Welcome text="Únete a la comunidad de aprendizaje online y en vivo más grande de habla hispana" />
+      <MostViewedSection>
+        {popularCourse.isLoading ? (
+          <p>Cargando...</p>
+        ) : (
+          <SliderMostViewed slides={popularCourse.data} />
+        )}
       </MostViewedSection>
-      <ComunityOpinions/>
+      <ComunityOpinions />
     </>
   );
 };
-
 export default Home;
