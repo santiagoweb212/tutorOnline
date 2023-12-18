@@ -94,52 +94,62 @@
     }
   ],
   "coments": [
-    { "id":2,
+    {
+      "id": 2,
       "nombre": "Estudiante123",
       "foto": "https://randomuser.me/api/portraits/women/12.jpg",
       "opinion": "¡Tutor Online es increíble! Me ha ayudado mucho con mis deberes de matemáticas."
     },
-    { "id":3,
+    {
+      "id": 3,
       "nombre": "AprendizX",
       "foto": "https://randomuser.me/api/portraits/men/3.jpg",
       "opinion": "La variedad de cursos disponibles es asombrosa. ¡Realmente estoy disfrutando aprendiendo aquí!"
     },
-    { "id":4,
+    {
+      "id": 4,
       "nombre": "Usuario_Tutor",
       "foto": "https://randomuser.me/api/portraits/men/97.jpg",
       "opinion": "Como tutor, encuentro que la plataforma facilita la interacción con los estudiantes y el intercambio de conocimientos."
     },
-    { "id":10,
+    {
+      "id": 10,
       "nombre": "EstudianteCurioso",
       "foto": "https://randomuser.me/api/portraits/men/7.jpg",
       "opinion": "¡El diseño intuitivo del sitio hace que sea fácil encontrar lo que necesito. Gracias Tutor Online!"
     },
-    { "id":5,
+    {
+      "id": 5,
       "nombre": "FuturoExperto",
       "foto": "https://randomuser.me/api/portraits/women/12.jpg",
       "opinion": "He mejorado mis habilidades en programación gracias a los excelentes recursos proporcionados por Tutor Online."
     },
-    { "id":6,
+    {
+      "id": 6,
       "nombre": "CientificaEnFormacion",
       "foto": "https://randomuser.me/api/portraits/men/73.jpg",
       "opinion": "Los materiales científicos son muy informativos. Me siento más preparada para mis estudios en biología."
     },
-    { "id":7,
+    {
+      "id": 7,
       "nombre": "HistoriadorDelFuturo",
       "foto": "https://randomuser.me/api/portraits/women/48.jpg",
       "opinion": "Los cursos de historia me han brindado una perspectiva más amplia. ¡Estoy emocionado por lo que aprenderé a continuación!"
     },
-    { "id":8,
+    {
+      "id": 8,
       "nombre": "EstrellaEnCrecimiento",
       "foto": "https://randomuser.me/api/portraits/women/55.jpg",
       "opinion": "Los profesores son apasionados y responden rápidamente a mis preguntas. Esto ha hecho que mi experiencia sea aún mejor."
     },
-    { "id":9,
+    {
+      "id": 9,
       "nombre": "EternoAprendiz",
       "foto": "https://randomuser.me/api/portraits/men/62.jpg",
       "opinion": "La plataforma Tutor Online ha hecho que el aprendizaje sea accesible y divertido. ¡Nunca dejo de aprender cosas nuevas!"
     },
-    { "id":10,
+    {
+      "id": 10,
       "nombre": "PadreOrgulloso",
       "foto": "https://randomuser.me/api/portraits/women/37.jpg",
       "opinion": "Mi hijo ha estado utilizando Tutor Online para mejorar en sus estudios. Estamos muy contentos con los resultados."
@@ -147,22 +157,10 @@
   ],
   "user": [
     {
-      "id": 1,
-      "username": "fredy",
-      "email": "fredy@hotmail.com",
-      "password": "123456"
-    },
-    {
-      "id": 2,
+      "id": "1702908670831",
       "username": "juan",
-      "email": "juan@hotmail.com",
-      "password": "123456"
-    },
-    {
-      "id": 1702664601347,
-      "username": "juan santiago",
-      "email": "carlos@gmail.com",
-      "password": "123abcd##"
+      "email": "juanusca45@gmail.com",
+      "password": "12345678910"
     }
   ]
 }

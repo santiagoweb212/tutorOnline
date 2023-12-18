@@ -6,4 +6,5 @@ const baseUrl =
 
 export const publicApi = axios.create({
   baseURL: baseUrl,
+ 
 });

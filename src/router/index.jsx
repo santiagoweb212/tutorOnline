@@ -10,8 +10,8 @@ import { Contact } from "@/pages/Contact/Contact";
 const router = createBrowserRouter([{
     path: '/', element: <LayoutPublic />, children: [
         { index: true, element: <Home/> },
-        { path: '/login', element: <Login/> },
-        { path: '/registro', element: <RegistroUsuario/> },
+        { path: '/iniciar-session', element: <Login/> },
+        { path: '/crear-cuenta', element: <RegistroUsuario/> },
         { path: "/nosotros", element: <Nosotros /> },
         { path: "/contacto", element: <Contact /> },
     ]

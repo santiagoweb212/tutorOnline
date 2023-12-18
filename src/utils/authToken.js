@@ -5,6 +5,9 @@ export class AuthToken {
   static getAuthToken() {
     return window.localStorage.getItem("token");//obtiene el token
   }
+  static setAuthToken(token) {
+    window.localStorage.setItem("token", token);
+  }
   static clearAuthToken ()  {
    window.localStorage.removeItem('token'); // Elimina el token del localStorage
   }

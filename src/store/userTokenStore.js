@@ -7,7 +7,10 @@ export const useAuthToken = create(zukeeper((set) => ({
     AuthToken.clearAuthToken();
     set({ isAuthUser: false });
   },
-  
+  setAuthToken: (token) => {
+    AuthToken.setAuthToken(token);
+    set({ isAuthUser: token });
+  },
 })));
 
 
