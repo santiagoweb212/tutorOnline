@@ -2,8 +2,7 @@ import React from "react";
 import Start from "./start";
 
 const StartRating = ({ rating }) => {
-  console.log(rating);
-  const yellowBlack="#dbce18"
+  const yellowBlack = "#dbce18";
   const middleStar = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +13,10 @@ const StartRating = ({ rating }) => {
     >
       <defs>
         <linearGradient id="halfStarGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="50%" style={{ stopColor: yellowBlack, stopOpacity: 1 }} />
+          <stop
+            offset="50%"
+            style={{ stopColor: yellowBlack, stopOpacity: 1 }}
+          />
           <stop
             offset="50%"
             style={{ stopColor: "transparent", stopOpacity: 1 }}
@@ -45,7 +47,7 @@ const StartRating = ({ rating }) => {
       />
     </svg>
   );
-  const starFillNone=(
+  const starFillNone = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -62,18 +64,18 @@ const StartRating = ({ rating }) => {
     </svg>
   );
   const roundedRating = Math.round(rating * 2) / 2;
-  console.log("-->", roundedRating);
+
   const stars = Array.from({ length: 5 }, (_, index) => {
     const isHalfStar = roundedRating - index === 0.5;
     const isFilledStar = index < roundedRating;
 
     return (
       <span key={index} className="star">
-        {isHalfStar ? middleStar : (isFilledStar ? star : starFillNone)}
+        {isHalfStar ? middleStar : isFilledStar ? star : starFillNone}
       </span>
     );
   });
-  console.log("stars-->", stars);
+ 
   return <div className=" flex">{stars}</div>;
 };
 
