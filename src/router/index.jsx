@@ -6,6 +6,7 @@ import Login from "@/pages/Login/login";
 import Home from "@/pages/Home/home";
 import { Nosotros } from '@/pages/Nosotros/Nosotros'
 import { Contact } from "@/pages/Contact/Contact";
+import { Aprendizaje } from "@/pages/Mi_aprendizaje/aprendizaje";
 
 const router = createBrowserRouter([{
     path: '/', element: <LayoutPublic />, children: [
@@ -14,6 +15,7 @@ const router = createBrowserRouter([{
         { path: '/crear-cuenta', element: <RegistroUsuario/> },
         { path: "/nosotros", element: <Nosotros /> },
         { path: "/contacto", element: <Contact /> },
+        { path: "/mi-aprendizaje", element: <Aprendizaje /> },
     ]
 }]);
 export default router
